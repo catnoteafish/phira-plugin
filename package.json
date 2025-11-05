@@ -1,0 +1,26 @@
+{
+  "name": "phira-plugin",
+  "version": "1.0.0",
+  "description": "Phira多人联机服务器的yunzai可视化实现",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": ">kasytano@icloud.com",
+  "license": "AGPL-3.0-only",
+  "packageManager": "pnpm@10.20.0",
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "art-template": "4.13.2",
+    "axios": "^1.13.1",
+    "js-yaml": "^4.1.0",
+    "puppeteer": "^24.27.0",
+    "radash": "^12.1.1"
+  }
+}
