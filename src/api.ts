@@ -1,5 +1,5 @@
-import axios = require('axios')
-import config from './config.js'
+import axios, { AxiosError } from 'axios'
+import config from './config.mjs'
 import { map, tryit } from 'radash'
 
 interface Room {
@@ -41,7 +41,7 @@ export async function idToName(userId: number | string): Promise<string> {
     return resp.data.name;
   }
 
-  const axiosErr = err as axios.AxiosError;
+  const axiosErr = err as AxiosError;
   if (!axiosErr?.response || [404, 500, 501].includes(axiosErr.response.status)) {
     return "无法连接到服务器";
   }
@@ -62,7 +62,7 @@ export async function chartToName(chartId: number): Promise<string> {
     return resp.data.name;
   }
 
-  const axiosErr = err as axios.AxiosError;
+  const axiosErr = err as AxiosError;
   if (!axiosErr?.response || [404, 500, 501].includes(axiosErr.response.status)) {
     return "无法连接到服务器";
   }

@@ -1,6 +1,6 @@
 import Puppeteer, { Browser, Page } from 'puppeteer'
 import { tryit } from 'radash'
-import template = require('art-template')
+import template from 'art-template'
 
 type templateData = {
     templatePath: string
