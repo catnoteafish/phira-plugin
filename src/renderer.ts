@@ -37,12 +37,13 @@ class Renderer {
             data,
             callback
         })
-        await this.screenShot
+        await this.screenShot()
     }
 
     async screenShot() {
         if (this.screenshoting) return
         while (this.queue.length !== 0) {
+            this.screenshoting = true
             try {
                 const data = this.queue.shift() as templateData
                 const html = template(data.templatePath, data.data)

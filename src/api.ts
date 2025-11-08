@@ -1,5 +1,5 @@
 import axios, { AxiosError } from 'axios'
-import config from './config.mjs'
+import config from './config.js'
 import { map, tryit } from 'radash'
 
 interface Room {
@@ -71,7 +71,8 @@ export async function chartToName(chartId: number): Promise<string> {
 }
 
 export async function GetList(): Promise<ServerList> {
-    return JSON.parse(await axios.get(config.url)) as ServerList
+    const data = await axios.get(config.url)
+    return data.data
 }
 
 export async function templateList(): Promise<templateDataList> {

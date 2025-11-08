@@ -1,13 +1,12 @@
-import fs from "fs/promises"
+import fs from "fs"
 import jsYaml from "js-yaml"
 import path from "path"
-import * as radash from "radash"
+import { fileURLToPath } from "url"
 interface Config {
     url: string
 }
 
-const [err, data] = await radash.tryit(fs.readFile)(path.join(path.dirname(__dirname), 'config', 'config.yml'), 'utf-8')
-if (err) throw `Failed to resolve config: ${err}`
-if (typeof data !== 'string') throw `Unknown config format`
+
+const data = fs.readFileSync(path.join(path.dirname(path.dirname(fileURLToPath(import.meta.url))), 'config', 'config.yml'), 'utf-8')
 const config = jsYaml.load(data) as Config
 export default config

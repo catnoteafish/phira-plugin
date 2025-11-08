@@ -1,7 +1,7 @@
 logger.info('---------------------')
 logger.info('加载Phira-plugin...')
 
-const plugin = import('./dist/main.js')
+import plugin from './dist/main.js'
 
 logger.info('加载完成')
 export default plugin

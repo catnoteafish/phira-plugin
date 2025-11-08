@@ -3,6 +3,7 @@ import path from 'path'
 import plugin  from '../../../lib/plugins/plugin.js'
 import { templateList } from './api.js'
 import { renderer } from './renderer.js'
+import { fileURLToPath } from 'url'
 
 export default class Phira extends plugin {
     constructor() {
@@ -10,9 +11,10 @@ export default class Phira extends plugin {
             name: 'phira-plugin',
             event: 'message',
             priority: 5000,
+            dsc: '',
             rule: [
                 {
-                    reg: "^#复读$",
+                    reg: "^#room$",
                     fnc: 'handle'
                 }
             ]
@@ -21,7 +23,7 @@ export default class Phira extends plugin {
 
     async handle(e: any) {
         const data = await templateList()
-        await renderer.createTask(path.join(path.dirname(__dirname), 'resource', 'list.art'), data, async (err: Error | null, screenshot: Buffer | null) => {
+        await renderer.createTask(path.join(path.dirname(path.dirname(fileURLToPath(import.meta.url))), 'resource', 'list.art'), data, async (err: Error | null, screenshot: Buffer | null) => {
             if (err) e.reply(`Generate failed: ${err}`)
             if (screenshot) e.reply(screenshot)
         })
