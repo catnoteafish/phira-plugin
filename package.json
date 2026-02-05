@@ -1,0 +1,25 @@
+{
+  "name": "phira-plugin",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "cd ../../ && node app.js dev"
+  },
+  "keywords": [],
+  "author": "kasytano <kasytano@icloud.com>",
+  "license": "AGPL-3.0-only",
+  "packageManager": "pnpm@10.26.1",
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^25.2.0",
+    "eslint": "^9.39.2",
+    "globals": "^17.3.0"
+  },
+  "dependencies": {
+    "art-template": "4.13.2",
+    "axios": "^1.13.4",
+    "js-yaml": "^4.1.1"
+  }
+}

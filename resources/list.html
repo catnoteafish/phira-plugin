@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="page">
+        <div class="room-container">
+            <div class="room">
+                <p class="text">aaa</p>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        background-image: url("./head.png");
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: black;
+    }
+
+    @font-face {
+        font-family: 'f';
+        src: url('./OPPOSans-Medium.ttf') format('truetype');
+        src: url('./优设标题黑.ttf') format('truetype');
+    }
+
+    .text {
+        font-family: 'f';
+        color: white;
+    }
+
+    .page {
+        /* 核心：宽度由内容决定，也就是所有房间卡片的总宽度 */
+        width: max-content;
+        /* 高度至少一屏，防止内容太少页面太矮 */
+        min-height: 100vh;
+        /* 背景图移到这里，因为它是实际的页面 */
+        background-image: url("{{_res_path}}/head.png");
+        background-position: top;
+        /* 关键：背景图宽度 = 视口宽度，而不是内容宽度 */
+        background-size: 100vw auto;
+        background-repeat: no-repeat;
+        background-color: black;
+    }
+
+    .room-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 472px;
+    }
+
+    .room {
+        background-image: url('./box.png');
+        background-size: cover;
+        display: flex;
+        padding: 75px 61px 75px;
+        height: 766px;
+        width: 656px;
+        font-size: 60px;
+    }
+</style>
+
+</html>
